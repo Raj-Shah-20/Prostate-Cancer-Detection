@@ -1,0 +1,94 @@
+<html>
+    <title>Prediction</title>
+<style>
+    .image{
+        width:350px;
+    }
+    .text{
+        font-size: 35px;
+    }
+    .bg-text {
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+      }
+    .bg-image1 {
+        /* The image used */
+        background-image: url("static/malignant.jpg");
+        /*https://unsplash.com/photos/DK--4VWK1tw */
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        
+        /* Full height */
+        height: 100%; 
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bg-image2 {
+        /* The image used */
+        background-image: url("static/Benign.jpg");
+        /* https://media.istockphoto.com/photos/wheelchairriding-elderly-and-caregivers-picture-id1328248284?b=1&k=20&m=1328248284&s=170667a&w=0&h=INgNCKkjcciK11eYdCP0ti3cQWEEA94Dug_gFz_KUWI= */
+        /* Add the blur effect */
+        filter: blur(8px);
+        -webkit-filter: blur(8px);
+        
+        /* Full height */
+        height: 100%; 
+        
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      
+
+</style>
+<body>
+
+    <center>
+
+        <h1>  PREDICTION :  </h1>
+    
+    {%if data == [0]%}
+    <div class="bg-image2"></div>
+    <div class="bg-text">
+    <h1>Benign</h1>  
+    <!--<img class="image" src='static/Benign.png'>   
+    <p class="text">Bhiduu! Tension nahi leneka abhi apna wicket girne ko bhot time hai<br />Mast jindagi ke Maje leneka kya !!!</p> -->
+    <p class="text"> In many cases, Bening tumors need no treatment. But treatment may be needed if symtopms are a problem.</p>
+    </div>
+    {%else%}
+    <div class="bg-image1"></div>
+    <div class="bg-text">
+    <h1>MALIGNANT</h1>
+    <!--<img class="image1" src=''> https://www.miskawaanhealth.com/cancer/wp-content/uploads/2021/07/prostate-cancer-symptoms-1024x683.jpg 
+    <p class="text">Bhiduu! Time kam hai apne pass!! <br /> Doctor ko dikhake Cancer ko clean blowed kar warna tu jindagi se clean bolwed hojayega!!</p> -->
+    <p class="text"> Immediate treatment is required! <br /> Some people with cancer will have only one type of treatment. But most people have a combination of treatments, such as surgery with chemotherapy and radiation therapy. </p>
+    </div>
+    {%endif%}
+
+        <br><br>
+    <a href='/'>Go back to home page</a>
+
+    </center>
+
+</body>
+
+</html>
+
+

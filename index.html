@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Prostate Cancer Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>PREDICT PROSTATE CANCER</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+        <label id="left-label">Radius:</label>
+    	<input type="text" name="radius"  required="required" />
+        <label id="right-label">Texture:</label>
+        <input type="text" name="texture"  required="required" /><br/>
+        <label id="left-label">Perimeter:</label>
+		<input id="perimeter" type="text" name="perimeter"  required="required" />
+        <label id="right-label">Area:</label>
+        <input type="text" name="area" required="required" /><br />
+        <label id="left-label">Smoothness:</label>
+        <input type="text" name="smoothness"  required="required" />
+        <label id="right-label">Compactness:</label>
+        <input type="text" name="compactness" required="required" /><br/>
+        <label id="left-label">Symmetry:</label>
+        <input type="text" name="symmetry" required="required" />
+        <label id="right-label">Fractal Dimension:</label>
+        <input type="text" name="fractal_dimension" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large" id="btn">Predict</button>
+    </form>
+
+    <br>
+    <br>
+    {{ prediction_text }}
+</body>
